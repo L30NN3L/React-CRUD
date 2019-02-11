@@ -8,7 +8,7 @@ const headerProps = {
     subtitle: 'Cadastro de pessoas: Incluir, Listar, Alterar e Excluir'
 }
 
-const baseUrl = 'http://localhost:3001/users'
+const baseUrl = 'http://localhost:3001/users' // endereço de onde API Rest FAKE se hospeda
 const initialState = {
     user: { name: '', 
             phone: '',
@@ -22,24 +22,30 @@ const initialState = {
     list: []
 }
 
+
+// Classe responsável por toda as funcionalidades do CRUD
 export default class UserCrud extends Component {
     
     state = { ...initialState }
 
+    // Quando o componente é renderizado, a consulta geral de pessoas é feita e a lista é preenchida
     componentWillMount() {
         axios(baseUrl).then(resp => {
             this.setState({ list: resp.data })
         })
     }
 
+    // função de limpar formulário
     clear() {
         this.setState({ user: initialState.user} )
     }
 
+    // Função de inserção de dados do formulário
     save() {
         const user = this.state.user
         const method = user.id ? 'put' : 'post'
 
+        // Se for inserção e não atualização, é inserido junto a data de criação
         if(method === 'post') {
            let date = new Date();
            date = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
@@ -47,6 +53,7 @@ export default class UserCrud extends Component {
         }
 
         const url = user.id ? `${baseUrl}/${user.id}` : baseUrl
+        
         axios[method](url, user)
             .then(resp => {
                 const list = this.getUpdatedList(resp.data)
@@ -54,12 +61,14 @@ export default class UserCrud extends Component {
             })
     }
 
+    // Função que atualiza a lista quando houver inserção ou edição de dados
     getUpdatedList(user, add = true) {
         const list = this.state.list.filter( u => u.id !== user.id )
         if(add) list.unshift(user)
         return list
     }
     
+    // Função que modifica todos os dados do estado da classe
     updateField(event) {
         const user = { ...this.state.user }
         user[event.target.name] = event.target.value
@@ -67,6 +76,7 @@ export default class UserCrud extends Component {
 
     }
 
+    // Formulário do Sistema
     renderForm() {
         return (
             <div className="form">
@@ -188,10 +198,12 @@ export default class UserCrud extends Component {
         )
     }
 
+    // Função que é utilizada para Edição
     load(user) {
         this.setState({ user })
     }
 
+    // Função que é utilizada para Deletar
     remove(user) {
         axios.delete(`${baseUrl}/${user.id}`).then(resp => {
             const list = this.getUpdatedList(user,false)
@@ -199,6 +211,7 @@ export default class UserCrud extends Component {
         })
     }
 
+    // Tabela do Sistema
     renderTable() {
         return (
             <table className="table mt-4">
@@ -218,6 +231,7 @@ export default class UserCrud extends Component {
         )
     }
 
+    // Modo de apresentação de dados para cada linha da Tabela
     renderRows() {
         return this.state.list.map(user => {
             return (
