@@ -34,28 +34,16 @@
       "id": 3
     },
     {
-      "name": "Hugo",
-      "phone": "3136373839",
+      "name": "Hugo Leonel",
+      "phone": "3112345678",
       "street": "Rua Teste",
       "number": "12345",
       "complement": "Casa",
-      "neighborhood": "São benedito",
-      "city": "Santa Luzia",
+      "neighborhood": "Bairro Teste",
+      "city": "Cidade Teste",
       "state": "MG",
-      "dateInsertion": "",
-      "id": 4
-    },
-    {
-      "name": "Hugo Leonel",
-      "phone": "1314124",
-      "street": "afasdas",
-      "number": "01312",
-      "complement": "dsadsa",
-      "neighborhood": "dsadsa",
-      "city": "dsadsa",
-      "state": "dsadas",
       "dateInsertion": "10/2/2019",
-      "id": 5
+      "id": 4
     }
   ]
 }
