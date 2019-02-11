@@ -1,0 +1,61 @@
+{
+  "users": [
+    {
+      "name": "Pedro Carlos",
+      "phone": "31998875887",
+      "street": "Rua do Amendoim",
+      "number": 35,
+      "complement": "ap 202",
+      "neighborhood": "Serra",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "id": 1
+    },
+    {
+      "name": "João Rodrigues",
+      "phone": "3133386695",
+      "street": "Av do Contorno",
+      "number": 2288,
+      "complement": "ap 303",
+      "neighborhood": "Savassi",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "id": 2
+    },
+    {
+      "name": "Amanda Duarte",
+      "phone": "31987546325",
+      "street": "Av Amazonas",
+      "number": 3589,
+      "complement": "450",
+      "neighborhood": "Gutierrez",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "id": 3
+    },
+    {
+      "name": "Hugo",
+      "phone": "3136373839",
+      "street": "Rua Teste",
+      "number": "12345",
+      "complement": "Casa",
+      "neighborhood": "São benedito",
+      "city": "Santa Luzia",
+      "state": "MG",
+      "dateInsertion": "",
+      "id": 4
+    },
+    {
+      "name": "Hugo Leonel",
+      "phone": "1314124",
+      "street": "afasdas",
+      "number": "01312",
+      "complement": "dsadsa",
+      "neighborhood": "dsadsa",
+      "city": "dsadsa",
+      "state": "dsadas",
+      "dateInsertion": "10/2/2019",
+      "id": 5
+    }
+  ]
+}
